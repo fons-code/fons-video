@@ -13,7 +13,7 @@ const Home = ({myList,trends,originals}) => {
     <div className="home">
       <Search />
       {myList.length > 0 && 
-        <Categories className="mylist">
+        <Categories title='My list'>
           <Caroussel>
           {myList.map(item =>(
               <CarousselItem key={item.id} {...item}/>
@@ -21,14 +21,14 @@ const Home = ({myList,trends,originals}) => {
           </Caroussel>
         </Categories>
       }
-      <Categories className='trends'>
+      <Categories title='Trends'>
           <Caroussel>
             {trends.map(item =>(
               <CarousselItem key={item.id} {...item}/>
             ))}
           </Caroussel>
       </Categories>
-      <Categories>
+      <Categories title='Originals'>
         <Caroussel>
           {originals.map(item =>(
             <CarousselItem key={item.id} {...item}/>
