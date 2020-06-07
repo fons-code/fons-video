@@ -16,7 +16,11 @@ const Home = ({myList,trends,originals}) => {
         <Categories title='My list'>
           <Caroussel>
           {myList.map(item =>(
-              <CarousselItem key={item.id} {...item}/>
+              <CarousselItem 
+                key={item.id} 
+                {...item}
+                isList={true}
+              />
             ))}
           </Caroussel>
         </Categories>
@@ -24,14 +28,22 @@ const Home = ({myList,trends,originals}) => {
       <Categories title='Trends'>
           <Caroussel>
             {trends.map(item =>(
-              <CarousselItem key={item.id} {...item}/>
+              <CarousselItem 
+                key={item.id} 
+                {...item}
+                isList={false}
+              />
             ))}
           </Caroussel>
       </Categories>
       <Categories title='Originals'>
         <Caroussel>
           {originals.map(item =>(
-            <CarousselItem key={item.id} {...item}/>
+            <CarousselItem 
+              key={item.id} 
+              {...item}
+              isList={false}  
+            />
           ))}
         </Caroussel>
       </Categories>
